@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>《暗黑破壞神III》Online Store</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon.ico" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <style type="text/css">
+        html {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 微軟正黑體;
+            color: #1d1b1b;
+            background-image: url('img/bg.jpg');
+            background-repeat: repeat;
+        }
+        
+        a:active {
+            color: yellow;
+        }
+        
+        a:link {
+            text-decoration: none;
+            outline: none;
+            color: whitesmoke;
+        }
+        
+        a:visited {
+            text-decoration: none;
+            outline: none;
+            color: gray;
+        }
+        
+        a:hover {
+            color: red;
+        }
+        
+        h2,
+        .title-color {
+            /* 顏色 */
+            color: white;
+        }
+        /* 廣告橫幅輪播設定 */
+        
+        .carouselExampleControls {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        /* 產品列表種類特效設定 */
+        
+        .card-deck>a:hover {
+            transform: scale(1.1);
+            box-shadow: 10px 10px 10p cornsilk;
+        }
+        /* 頁尾設定 */
+        
+        .footer-menu {
+            display: block;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-menu>li {
+            display: inline-block;
+            margin-right: 1rem;
+        }
+        
+        .footer-menu>li>a {
+            color: white;
+        }
+        
+        .footer-menu>li>a:hover {
+            color: yellow;
+        }
+        /* 最頂部導航列右邊購物車與註冊的間距 */
+        
+        #smallBtn {
+            margin: 5px;
+        }
+        /* 購物車靠右固定:但rwd縮放會跑掉 */
+        
+        #shopCart {
+            right: 0px;
+            position: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 導航列表設定 -->
+    <nav class="navbar navbar-dark navbar-expand-md bg-secondary justify-content-between">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse dual-nav w-50 order-1 order-md-0">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link pl-0" href="index.html">
+                            <h5 class="text-white">首頁</h5><span class="sr-only"> </span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">
+                            <h5 class="text-white text-link">購物商城</h5>
+                        </a>
+                    </li>
+                    <!-- <li class="nav-item">
+                    <a class="nav-link" href="">
+                        <h6 class="text-white">客服專區</h6>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <h6 class="text-white">關於 Daiblo 3</h6>
+                    </a>
+                </li> -->
+
+                </ul>
+            </div>
+            <a href="index.html" class="navbar-brand mx-auto d-block text-center order-0 order-md-1 w-25"><img src="img/logo.png" width="70%"></a>
+            </a>
+            <div class="navbar-collapse collapse dual-nav w-50 order-2">
+                <ul class="nav navbar-nav ml-auto">
+                    <a class="btn  btn-outline-warning text-white" id="smallBtn" href="login.html">會員登入</a></li><br>
+                    <a class=" btn  btn-outline-warning text-white" id="smallBtn" href="singup.html">我要註冊</a></li>
+                    <a class=" btn  btn-danger text-white" id="smallBtn" href="cart.html">購物車</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- 購物商城列表 -->
+    <section class="page-content">
+        <div class="container pt-5 pb-5">
+            <div class="row">
+                <div class="col-12 col-md-9">
+                    <div class="row">
+                        <div class="col-12 mb-6 ">
+                            <h2 id="aa" name="aa">人身部品</h2>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 mb-3">
+                            <div class="card">
+                                <img class="card-img-top" src="img/product/a01.jpg" alt="card-img-top">
+                                <div class="card-body">
+                                    <h4 class="card-title text-center ">李奧瑞克的王冠</h4>
+                                    <p class="card-text text-center ">頭盔</p>
+                                    <h5 class="card-text text-danger text-center ">$&nbsp;5000</h5>
+                                    <a href="product.html" class="btn btn-outline-secondary btn-block">商品詳情</a><br>
+                                    <div class="col">
+                                        <input type="number" min="0" placeholder="數量" class="form-control amount">
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <button class="btn btn-info btn-block add_cart" data-price="5000">加到購物車</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 mb-3">
+                            <div class="card">
+                                <img class="card-img-top" src="img/product/a03.jpg" alt="card-img-top">
+                                <div class="card-body">
+                                    <h4 class="card-title text-center ">怒濤之心</h4>
+                                    <p class="card-text text-center ">胸甲</p>
+                                    <h5 class="card-text text-danger text-center ">$&nbsp;6000</h5>
+                                    <a href="" class="btn btn-outline-secondary btn-block">商品詳情</a><br>
+                                    <div class="col">
+                                        <input type="number" min="0" placeholder="數量" class="form-control amount">
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <button class="btn btn-info btn-block add_cart" data-price="6000">加到購物車</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 mb-3">
+                            <div class="card">
+                                <img class="card-img-top" src="img/product/a02.jpg" alt="card-img-top">
+                                <div class="card-body">
+                                    <h4 class="card-title text-center ">塔斯克與西歐</h4>
+                                    <p class="card-text text-center ">手套</p>
+                                    <h5 class="card-text text-danger text-center ">$&nbsp;4000</h5>
+                                    <a href="" class="btn btn-outline-secondary btn-block">商品詳情</a><br>
+                                    <div class="col">
+                                        <input type="number" min="0" placeholder="數量" class="form-control amount">
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <button class="btn btn-info btn-block add_cart" data-price="4000">加到購物車</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 mb-3">
+                            <div class="card">
+                                <img class="card-img-top" src="img/product/a05.jpg" alt="card-img-top">
+                                <div class="card-body">
+                                    <h4 class="card-title text-center ">拉斯瑪的骨靴</h4>
+                                    <p class="card-text text-center ">鞋</p>
+                                    <h5 class="card-text text-danger text-center ">$&nbsp;3000</h5>
+                                    <a href="" class="btn btn-outline-secondary btn-block">商品詳情</a><br>
+                                    <div class="col">
+                                        <input type="number" min="0" placeholder="數量" class="form-control amount">
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <button class="btn btn-info btn-block add_cart" data-price="3000">加到購物車</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 mb-3">
+                            <div class="card">
+                                <img class="card-img-top" src="img/product/a04.jpg" alt="card-img-top">
+                                <div class="card-body">
+                                    <h4 class="card-title text-center ">深淵挖掘褲</h4>
+                                    <p class="card-text text-center ">褲子</p>
+                                    <h5 class="card-text text-danger text-center ">$&nbsp;3000</h5>
+                                    <a href="" class="btn btn-outline-secondary btn-block">商品詳情</a><br>
+                                    <div class="col">
+                                        <input type="number" min="0" placeholder="數量" class="form-control amount">
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <button class="btn btn-info btn-block add_cart" data-price="3000">加到購物車</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 mb-3">
+                            <div class="card">
+                                <img class="card-img-top" src="img/product/a06.jpg" alt="card-img-top">
+                                <div class="card-body">
+                                    <h4 class="card-title text-center ">不死鳥之羽</h4>
+                                    <p class="card-text text-center ">頭盔</p>
+                                    <h5 class="card-text text-danger text-center ">$&nbsp;3000</h5>
+                                    <a href="" class="btn btn-outline-secondary btn-block">商品詳情</a><br>
+                                    <div class="col">
+                                        <input type="number" min="0" placeholder="數量" class="form-control amount">
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <button class="btn btn-info btn-block add_cart" data-price="3000">加到購物車</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-6 ">
+                            <h2 id="bb" name="bb">居家防護</h2>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 mb-3">
+                            <div class="card">
+                                <img class="card-img-top" src="img/product/b01.jpg" alt="card-img-top">
+                                <div class="card-body">
+                                    <h4 class="card-title text-center ">莫度盧的承諾</h4>
+                                    <p class="card-text text-center ">斧</p>
+                                    <h5 class="card-text text-danger text-center ">$&nbsp;5000</h5>
+                                    <a href="" class="btn btn-outline-secondary btn-block">商品詳情</a><br>
+                                    <div class="col">
+                                        <input type="number" min="0" placeholder="數量" class="form-control amount">
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <button class="btn btn-info btn-block add_cart" data-price="5000">加到購物車</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 mb-3">
+                            <div class="card">
+                                <img class="card-img-top" src="img/product/b02.jpg" alt="card-img-top">
+                                <div class="card-body">
+                                    <h4 class="card-title text-center ">神聖裂斧</h4>
+                                    <p class="card-text text-center ">斧</p>
+                                    <h5 class="card-text text-danger text-center ">$&nbsp;6000</h5>
+                                    <a href="" class="btn btn-outline-secondary btn-block">商品詳情</a><br>
+                                    <div class="col">
+                                        <input type="number" min="0" placeholder="數量" class="form-control amount">
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <button class="btn btn-info btn-block add_cart" data-price="6000">加到購物車</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 mb-3">
+                            <div class="card">
+                                <img class="card-img-top" src="img/product/b04.jpg" alt="card-img-top">
+                                <div class="card-body">
+                                    <h4 class="card-title text-center ">詆誹者</h4>
+                                    <p class="card-text text-center ">劍</p>
+                                    <h5 class="card-text text-danger text-center ">$&nbsp;4000</h5>
+                                    <a href="" class="btn btn-outline-secondary btn-block">商品詳情</a><br>
+                                    <div class="col">
+                                        <input type="number" min="0" placeholder="數量" class="form-control amount">
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <button class="btn btn-info btn-block add_cart" data-price="4000">加到購物車</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-6 ">
+                            <h2 id="cc" name="cc">平安納符</h2>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 mb-3">
+                            <div class="card">
+                                <img class="card-img-top" src="img/product/c01.jpg" alt="card-img-top">
+                                <div class="card-body">
+                                    <h4 class="card-title text-center ">觀靈符</h4>
+                                    <p class="card-text text-center ">護身符</p>
+                                    <h5 class="card-text text-danger text-center ">$&nbsp;5000</h5>
+                                    <a href="" class="btn btn-outline-secondary btn-block">商品詳情</a><br>
+                                    <div class="col">
+                                        <input type="number" min="0" placeholder="數量" class="form-control amount">
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <button class="btn btn-info btn-block add_cart" data-price="5000">加到購物車</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 mb-3">
+                            <div class="card">
+                                <img class="card-img-top" src="img/product/c02.jpg" alt="card-img-top">
+                                <div class="card-body">
+                                    <h4 class="card-title text-center ">孫悟空的戲法</h4>
+                                    <p class="card-text text-center ">護身符</p>
+                                    <h5 class="card-text text-danger text-center ">$&nbsp;6000</h5>
+                                    <a href="" class="btn btn-outline-secondary btn-block">商品詳情</a><br>
+                                    <div class="col">
+                                        <input type="number" min="0" placeholder="數量" class="form-control amount">
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <button class="btn btn-info btn-block add_cart" data-price="6000">加到購物車</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 mb-3">
+                            <div class="card">
+                                <img class="card-img-top" src="img/product/c03.jpg" alt="card-img-top">
+                                <div class="card-body">
+                                    <h4 class="card-title text-center ">克己</h4>
+                                    <p class="card-text text-center ">戒指</p>
+                                    <h5 class="card-text text-danger text-center ">$&nbsp;4000</h5>
+                                    <a href="" class="btn btn-outline-secondary btn-block">商品詳情</a><br>
+                                    <div class="col">
+                                        <input type="number" min="0" placeholder="數量" class="form-control amount">
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <button class="btn btn-info btn-block add_cart" data-price="4000">加到購物車</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-6 ">
+                            <h2 id="dd" name="dd">手工DIY</h2>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 mb-3">
+                            <div class="card">
+                                <img class="card-img-top" src="img/product/d01.jpg" alt="card-img-top">
+                                <div class="card-body">
+                                    <h4 class="card-title text-center ">設計圖:牧牛仗</h4>
+                                    <p class="card-text text-center ">鐵匠設計圖</p>
+                                    <h5 class="card-text text-danger text-center ">$&nbsp;5000</h5>
+                                    <a href="" class="btn btn-outline-secondary btn-block">商品詳情</a><br>
+                                    <div class="col">
+                                        <input type="number" min="0" placeholder="數量" class="form-control amount">
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <button class="btn btn-info btn-block add_cart" data-price="5000">加到購物車</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 mb-3">
+                            <div class="card">
+                                <img class="card-img-top" src="img/product/d02.jpg" alt="card-img-top">
+                                <div class="card-body">
+                                    <h4 class="card-title text-center ">亞瑞特之戰掛氈</h4>
+                                    <p class="card-text text-center ">製作材料</p>
+                                    <h5 class="card-text text-danger text-center ">$&nbsp;6000</h5>
+                                    <a href="" class="btn btn-outline-secondary btn-block">商品詳情</a><br>
+                                    <div class="col">
+                                        <input type="number" min="0" placeholder="數量" class="form-control amount">
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <button class="btn btn-info btn-block add_cart" data-price="6000">加到購物車</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 mb-3">
+                            <div class="card">
+                                <img class="card-img-top" src="img/product/d03.jpg" alt="card-img-top">
+                                <div class="card-body">
+                                    <h4 class="card-title text-center ">太極</h4>
+                                    <p class="card-text text-center ">寶石</p>
+                                    <h5 class="card-text text-danger text-center ">$&nbsp;4000</h5>
+                                    <a href="" class="btn btn-outline-secondary btn-block">商品詳情</a><br>
+                                    <div class="col">
+                                        <input type="number" min="0" placeholder="數量" class="form-control amount">
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <button class="btn btn-info btn-block add_cart" data-price="4000">加到購物車</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 mb-6 ">
+                            <h2 id="dd" name="dd">補給聖品</h2>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 mb-3">
+                            <div class="card">
+                                <img class="card-img-top" src="img/product/e01.jpg" alt="card-img-top">
+                                <div class="card-body">
+                                    <h4 class="card-title text-center ">無盡混沌藥水</h4>
+                                    <p class="card-text text-center ">藥水</p>
+                                    <h5 class="card-text text-danger text-center ">$&nbsp;5000</h5>
+                                    <a href="" class="btn btn-outline-secondary btn-block">商品詳情</a><br>
+                                    <div class="col">
+                                        <input type="number" min="0" placeholder="數量" class="form-control amount">
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <button class="btn btn-info btn-block add_cart" data-price="5000">加到購物車</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 mb-3">
+                            <div class="card">
+                                <img class="card-img-top" src="img/product/e02.jpg" alt="card-img-top">
+                                <div class="card-body">
+                                    <h4 class="card-title text-center ">無盡增強藥水</h4>
+                                    <p class="card-text text-center ">藥水</p>
+                                    <h5 class="card-text text-danger text-center ">$&nbsp;6000</h5>
+                                    <a href="" class="btn btn-outline-secondary btn-block">商品詳情</a><br>
+                                    <div class="col">
+                                        <input type="number" min="0" placeholder="數量" class="form-control amount">
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <button class="btn btn-info btn-block add_cart" data-price="6000">加到購物車</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 mb-3">
+                            <div class="card">
+                                <img class="card-img-top" src="img/product/e03.jpg" alt="card-img-top">
+                                <div class="card-body">
+                                    <h4 class="card-title text-center ">生命藥水</h4>
+                                    <p class="card-text text-center ">藥水</p>
+                                    <h5 class="card-text text-danger text-center ">$&nbsp;4000</h5>
+                                    <a href="" class="btn btn-outline-secondary btn-block">商品詳情</a><br>
+                                    <div class="col">
+                                        <input type="number" min="0" placeholder="數量" class="form-control amount">
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <button class="btn btn-info btn-block add_cart" data-price="4000">加到購物車</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 簡易購物車功能 -->
+                <div class="col-12 col-md-3" id="shopCart">
+                    <div class="row">
+                        <div class="card border-warning border-bottom-10">
+                            <div class="card-body ">
+                                <div class="col-12 mb-5">
+                                    <div class="d-block sidebar-product-list  ">
+                                        <div class="pt-4">
+                                            <h3 class="col-12 card-title  text-center ">購物車</h3>
+                                            <ul id="cart">
+                                            </ul><a class="text-danger text-center">
+                                                訂單金額: <span id="total"></span>元</a><br>
+                                            <a class="btn btn-info text-white" id="clear">清空購物車</a>
+                                            <a class="btn btn-info text-white" href="cart.html">結帳付款</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 頁尾 -->
+    <footer class="bg-dark ">
+        <div class="container">
+            <!-- <div class="row "> -->
+            <div class="col-12  mt-3 ">
+                <ul class="footer-menu ">
+                    <li><a href="index.html ">首頁</a></li>
+                    <li><a href="shop.html ">購物商城</a></li>
+                    <li><a href="login.html">會員登入</a></li>
+                    <li><a href="singup.html">我要註冊</a></li>
+                    <li><a href="cart.html">購物車</a></li>
+                </ul>
+            </div>
+            <div class="col-12 mt-3 py-4 ">
+                <p class="text-white text-center ">© Copyright 僅供學術研究使用，版權全不屬於本人擁有，研究完成後即刪除.</p>
+            </div>
+            <!-- </div> -->
+        </div>
+    </footer>
+    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js">
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script id="rendered-js">
+        var cart = [];
+        if (localStorage.getItem("cart")) {
+            cart = JSON.parse(localStorage.getItem("cart"));
+        }
+        setCart();
+
+        function setCart() {
+            var cartList = "",
+                s_price = 0,
+                total = 0;
+            for (let $i = 0; $i < cart.length; $i++) {
+                if (window.CP.shouldStopExecution(0)) break;
+                s_price = cart[$i]["price"] * cart[$i]["amount"];
+                total += s_price;
+                cartList += `<li> ${cart[$i]["name"]}  <br>單價: ${cart[$i]["price"]} 數量: ${
+    cart[$i]["amount"]
+    } <br>小計: ${s_price}</li>`;
+            }
+            window.CP.exitedLoop(0);
+            $("#cart").
+            empty().
+            append(cartList);
+            $("#total").text(total);
+        }
+
+        $("#clear").click(function() {
+            cart = [];
+            localStorage.removeItem("cart");
+            setCart();
+        });
+        $(".add_cart").click(function() {
+            let product = $(this).closest(".card-body");
+            let newItem = {
+                name: product.find(".card-title").text(),
+                price: $(this).data("price"),
+                amount: product.find(".amount").val()
+            };
+
+            cart.push(newItem);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            setCart();
+        });
+        //# sourceURL=pen.js
+    </script>
+
+    <script src="https://static.codepen.io/assets/editor/live/css_reload-5619dc0905a68b2e6298901de54f73cefe4e079f65a75406858d92924b4938bf.js">
+    </script>
+</body>
+
+</html>

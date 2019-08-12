@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>《暗黑破壞神III》Online Store</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon.ico" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style type="text/css">
+        html {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 微軟正黑體;
+            color: #1d1b1b;
+            background-image: url('img/bg.jpg');
+            background-repeat: repeat;
+        }
+        
+        a:active {
+            color: yellow;
+        }
+        
+        a:link {
+            text-decoration: none;
+            outline: none;
+            color: whitesmoke;
+        }
+        
+        a:visited {
+            text-decoration: none;
+            outline: none;
+            color: gray;
+        }
+        
+        a:hover {
+            color: red;
+        }
+        
+        h2,
+        .title-color {
+            /* 顏色 */
+            color: white;
+        }
+        /* 廣告橫幅輪播設定 */
+        
+        .carouselExampleControls {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        /* 產品列表種類特效設定 */
+        
+        .card-deck>a:hover {
+            transform: scale(1.1);
+            box-shadow: 10px 10px 10p cornsilk;
+        }
+        /* 頁尾設定 */
+        
+        .footer-menu {
+            display: block;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-menu>li {
+            display: inline-block;
+            margin-right: 1rem;
+        }
+        
+        .footer-menu>li>a {
+            color: white;
+        }
+        
+        .footer-menu>li>a:hover {
+            color: yellow;
+        }
+        /* 最頂部導航列右邊購物車與註冊的間距 */
+        
+        #smallBtn {
+            margin: 5px;
+        }
+        /* 購物車靠右固定:但rwd縮放會跑掉 */
+        
+        #shopCart {
+            right: 0px;
+            position: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 導航列表設定 -->
+    <nav class="navbar navbar-dark navbar-expand-md bg-secondary justify-content-between">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse dual-nav w-50 order-1 order-md-0">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link pl-0" href="index.html">
+                            <h5 class="text-white">首頁</h5><span class="sr-only"> </span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">
+                            <h5 class="text-white text-link">購物商城</h5>
+                        </a>
+                    </li>
+                    <!-- <li class="nav-item">
+                    <a class="nav-link" href="">
+                        <h6 class="text-white">客服專區</h6>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <h6 class="text-white">關於 Daiblo 3</h6>
+                    </a>
+                </li> -->
+
+                </ul>
+            </div>
+            <a href="index.html" class="navbar-brand mx-auto d-block text-center order-0 order-md-1 w-25"><img src="img/logo.png" width="70%"></a>
+            </a>
+            <div class="navbar-collapse collapse dual-nav w-50 order-2">
+                <ul class="nav navbar-nav ml-auto">
+                    <a class="btn  btn-outline-warning text-white" id="smallBtn" href="login.html">會員登入</a></li><br>
+                    <a class=" btn  btn-outline-warning text-white" id="smallBtn" href="singup.html">我要註冊</a></li>
+                    <a class=" btn  btn-danger text-white" id="smallBtn" href="cart.html">購物車</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+
+    <body>
+        <div class="site-wrap">
+            <div class="site-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <img src="img/ok.png" width="20%">
+                            <h2 class="display-3 text-black">Welcome back !</h2>
+                            <p class="">
+                                <h5 class="text-white">歡迎回來，您已成功登入!</h5>
+                            </p>
+                            <p><a href="index.html" class="btn btn btn-primary text-white">返回首頁購物去</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <!-- 頁尾 -->
+    <footer class="bg-dark ">
+        <div class="container">
+            <!-- <div class="row "> -->
+            <div class="col-12  mt-3 ">
+                <ul class="footer-menu ">
+                    <li><a href="index.html ">首頁</a></li>
+                    <li><a href="shop.html ">購物商城</a></li>
+                    <li><a href="login.html">會員登入</a></li>
+                    <li><a href="singup.html">我要註冊</a></li>
+                    <li><a href="cart.html">購物車</a></li>
+                </ul>
+            </div>
+            <div class="col-12 mt-3 py-4 ">
+                <p class="text-white text-center ">© Copyright 僅供學術研究使用，版權全不屬於本人擁有，研究完成後即刪除.</p>
+            </div>
+            <!-- </div> -->
+        </div>
+    </footer>
+
+</html>

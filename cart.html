@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>《暗黑破壞神III》Online Store</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon.ico" />
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+
+    <style type="text/css">
+        html {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 微軟正黑體;
+            color: #1d1b1b;
+            background-image: url('img/bg.jpg');
+            background-repeat: repeat;
+        }
+        
+        a:active {
+            color: yellow;
+        }
+        
+        a:link {
+            text-decoration: none;
+            outline: none;
+            color: whitesmoke;
+        }
+        
+        a:visited {
+            text-decoration: none;
+            outline: none;
+            color: gray;
+        }
+        
+        a:hover {
+            color: red;
+        }
+        
+        h2 {
+            color: white;
+        }
+        /* 廣告橫幅輪播設定 */
+        
+        .carouselExampleControls {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        /* 產品列表種類特效設定 */
+        
+        .card-deck>a:hover {
+            transform: scale(1.1);
+            box-shadow: 10px 10px 10p cornsilk;
+        }
+        /* 頁尾設定 */
+        
+        .footer-menu {
+            display: block;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-menu>li {
+            display: inline-block;
+            margin-right: 1rem;
+        }
+        
+        .footer-menu>li>a {
+            color: white;
+        }
+        
+        .footer-menu>li>a:hover {
+            color: yellow;
+        }
+        /* 最頂部導航列右邊購物車與註冊的間距 */
+        
+        #smallBtn {
+            margin: 5px;
+        }
+        /* 購物車靠右固定:但rwd縮放會跑掉 */
+        
+        #cartcard {
+            margin: 0 auto;
+           
+            float: none;
+           
+            margin-bottom: 10px;
+          
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 導航列表設定 -->
+    <nav class="navbar navbar-dark navbar-expand-md bg-secondary justify-content-between">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse dual-nav w-50 order-1 order-md-0">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link pl-0" href="index.html">
+                            <h5 class="text-white">首頁</h5><span class="sr-only"> </span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">
+                            <h5 class="text-white text-link">購物商城</h5>
+                        </a>
+                    </li>
+                    <!-- <li class="nav-item">
+                    <a class="nav-link" href="">
+                        <h6 class="text-white">客服專區</h6>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <h6 class="text-white">關於 Daiblo 3</h6>
+                    </a>
+                </li> -->
+
+                </ul>
+            </div>
+            <a href="index.html" class="navbar-brand mx-auto d-block text-center order-0 order-md-1 w-25"><img src="img/logo.png" width="70%"></a>
+            </a>
+            <div class="navbar-collapse collapse dual-nav w-50 order-2">
+                <ul class="nav navbar-nav ml-auto">
+                    <a class="btn  btn-outline-warning text-white" id="smallBtn" href="login.html">會員登入</a></li><br>
+                    <a class=" btn  btn-outline-warning text-white" id="smallBtn" href="singup.html">我要註冊</a></li>
+                    <a class=" btn  btn-danger text-white" id="smallBtn" href="cart.html">購物車</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <br>
+    <!-- 簡易購物車功能 -->
+
+    <div class="card text-center col-sm-8" id="cartcard">
+        <h5 class="card-header ">我的購物車</h5>
+        <div class="card-body">
+
+            <a id="cart"></a>
+            <a class="text-danger"><br> 訂單金額: <span id="total"></span>元</a><br>
+            <a class="btn btn-info text-white" id="clear">清空購物車</a>
+            <a class="btn btn-info text-white" href="checkout.html">訂單提交</a>
+        </div>
+    </div>
+    <!-- 頁尾 -->
+    <footer class="bg-dark ">
+        <div class="container">
+            <!-- <div class="row "> -->
+            <div class="col-12  mt-3 ">
+                <ul class="footer-menu ">
+                    <li><a href="index.html ">首頁</a></li>
+                    <li><a href="shop.html ">購物商城</a></li>
+                    <li><a href="login.html">會員登入</a></li>
+                    <li><a href="singup.html">我要註冊</a></li>
+                    <li><a href="cart.html">購物車</a></li>
+                </ul>
+            </div>
+            <div class="col-12 mt-3 py-4 ">
+                <p class="text-white text-center ">© Copyright 僅供學術研究使用，版權全不屬於本人擁有，研究完成後即刪除.</p>
+            </div>
+            <!-- </div> -->
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+
+    <!-- 購物車函數 -->
+    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js">
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script id="rendered-js">
+        var cart = [];
+        if (localStorage.getItem("cart")) {
+            cart = JSON.parse(localStorage.getItem("cart"));
+        }
+        setCart();
+
+        function setCart() {
+            var cartList = "",
+                s_price = 0,
+                total = 0;
+            for (let $i = 0; $i < cart.length; $i++) {
+                if (window.CP.shouldStopExecution(0)) break;
+                s_price = cart[$i]["price"] * cart[$i]["amount"];
+                total += s_price;
+                cartList += `<li> ${cart[$i]["name"]}  <br>單價: ${cart[$i]["price"]} 數量: ${
+                cart[$i]["amount"]
+                } 小計: ${s_price}</li>`;
+            }
+            window.CP.exitedLoop(0);
+            $("#cart").
+            empty().
+            append(cartList);
+            $("#total").text(total);
+        }
+
+        $("#clear").click(function() {
+            cart = [];
+            localStorage.removeItem("cart");
+            setCart();
+        });
+        $("#send").click(function() {
+            cart = [];
+            localStorage.removeItem("cart");
+            setCart();
+        });
+        $(".add_cart").click(function() {
+            let product = $(this).closest(".card-body");
+            let newItem = {
+                name: product.find(".card-title").text(),
+                price: $(this).data("price"),
+                amount: product.find(".amount").val()
+            };
+
+            cart.push(newItem);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            setCart();
+        });
+        //# sourceURL=pen.js
+    </script>
+
+    <script src="https://static.codepen.io/assets/editor/live/css_reload-5619dc0905a68b2e6298901de54f73cefe4e079f65a75406858d92924b4938bf.js">
+    </script>
+
+</body>
+
+</html>
